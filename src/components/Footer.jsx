@@ -5,7 +5,7 @@ const mailto = `mailto:${siteConfig.email}`
 
 export function Footer() {
   return (
-    <footer id="contact" className="scroll-mt-24 border-t border-black/5 bg-ink text-white">
+    <footer id="contact" className="scroll-mt-24 border-t border-line/10 bg-night text-white">
       <div className="mx-auto max-w-5xl px-5 py-16 sm:px-6 lg:px-8">
         <h2 className="font-serif text-2xl font-semibold tracking-tight sm:text-3xl">Let&apos;s connect</h2>
         <p className="mt-3 max-w-xl text-base leading-relaxed text-white/70">
@@ -14,7 +14,7 @@ export function Footer() {
         <div className="mt-8 flex flex-wrap gap-3">
           <ButtonLink
             variant="primary"
-            className="!bg-white !text-ink hover:!bg-white/90 focus-visible:!outline-white"
+            className="!bg-white !text-night hover:!bg-white/90 focus-visible:!outline-white"
             href={mailto}
           >
             Email

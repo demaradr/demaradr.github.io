@@ -3,9 +3,9 @@ const base =
 
 const variants = {
   primary:
-    `${base} bg-accent text-white shadow-sm hover:bg-accent-hover focus-visible:outline-accent`,
+    `${base} bg-accent text-accent-contrast shadow-sm hover:bg-accent-hover focus-visible:outline-accent`,
   secondary:
-    `${base} border border-black/10 bg-white text-ink hover:border-black/20 hover:bg-surface focus-visible:outline-accent`,
+    `${base} border border-line/10 bg-canvas text-ink hover:border-line/20 hover:bg-surface focus-visible:outline-accent`,
   ghost: `${base} border border-transparent text-ink hover:bg-surface focus-visible:outline-accent`,
 }
 

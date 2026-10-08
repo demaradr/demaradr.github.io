@@ -4,3 +4,6 @@ dist
 *.local
 .env
 .env.*
+
+# Full-size photo originals (web versions live in public/)
+photos-original/

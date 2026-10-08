@@ -3,6 +3,32 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --canvas: 255 255 255;
+    --ink: 15 20 25;
+    --ink-muted: 92 107 122;
+    --surface: 247 248 250;
+    --line: 15 20 25;
+    --accent: 26 95 122;
+    --accent-hover: 20 74 95;
+    --accent-subtle: 230 242 246;
+    --accent-contrast: 255 255 255;
+    color-scheme: light;
+  }
+
+  .dark {
+    --canvas: 13 17 22;
+    --ink: 230 235 240;
+    --ink-muted: 150 163 176;
+    --surface: 22 28 35;
+    --line: 230 235 240;
+    --accent: 94 186 220;
+    --accent-hover: 128 204 232;
+    --accent-subtle: 20 48 60;
+    --accent-contrast: 8 20 26;
+    color-scheme: dark;
+  }
+
   html {
     scroll-behavior: smooth;
   }
@@ -22,7 +48,7 @@
   }
 
   body {
-    @apply bg-white font-sans text-ink antialiased;
+    @apply bg-canvas font-sans text-ink antialiased;
   }
 
   ::selection {
