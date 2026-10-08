@@ -9,7 +9,7 @@ export function Footer() {
       <div className="mx-auto max-w-5xl px-5 py-16 sm:px-6 lg:px-8">
         <h2 className="font-serif text-2xl font-semibold tracking-tight sm:text-3xl">Let&apos;s connect</h2>
         <p className="mt-3 max-w-xl text-base leading-relaxed text-white/70">
-          Open to conversations about full-stack roles, internships, and teams that value careful engineering.
+          Open to full-time software engineering roles in Salt Lake City or Portland, and always happy to talk shop.
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
           <ButtonLink

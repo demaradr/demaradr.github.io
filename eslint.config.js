@@ -10,7 +10,7 @@ export default [
   react.configs.flat.recommended,
   react.configs.flat['jsx-runtime'],
   {
-    files: ['**/*.{js,jsx}'],
+    files: ['**/*.{js,jsx,mjs}'],
     languageOptions: {
       globals: globals.browser,
       parserOptions: {
@@ -33,5 +33,9 @@ export default [
       'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
       'react/prop-types': 'off',
     },
+  },
+  {
+    files: ['scripts/**/*.mjs', 'vite.config.js'],
+    languageOptions: { globals: globals.node },
   },
 ]

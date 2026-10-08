@@ -3,13 +3,12 @@ import { siteConfig } from '../siteConfig'
 import { applyTheme } from '../theme'
 
 const links = [
-  { href: '#about', label: 'About' },
-  { href: '#featured', label: 'Experience' },
-  { href: '#projects', label: 'Projects' },
-  { href: '#skills', label: 'Skills' },
-  { href: '#background', label: 'Background' },
-  { href: '#contact', label: 'Contact' },
+  { href: '/projects/', label: 'Projects' },
+  { href: '/experience/', label: 'Experience' },
+  { href: '/about/', label: 'About' },
 ]
+
+const isCurrent = (href) => window.location.pathname.startsWith(href)
 
 function ThemeToggle() {
   const [dark, setDark] = useState(() => document.documentElement.classList.contains('dark'))
@@ -68,7 +67,7 @@ export function Nav() {
     <header className="sticky top-0 z-50 border-b border-line/5 bg-canvas/90 backdrop-blur-md">
       <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-5 py-3 sm:px-6 lg:px-8">
         <a
-          href="#top"
+          href="/"
           className="group min-w-0 shrink font-serif text-lg font-semibold tracking-tight text-ink transition-colors hover:text-accent"
         >
           <span className="truncate">{siteConfig.name.split(' ')[0]}</span>
@@ -80,11 +79,19 @@ export function Nav() {
             <a
               key={href}
               href={href}
-              className="rounded-md px-3 py-2 text-sm font-medium text-ink-muted transition-colors hover:bg-surface hover:text-ink"
+              aria-current={isCurrent(href) ? 'page' : undefined}
+              className="rounded-md px-3 py-2 text-sm font-medium text-ink-muted transition-colors hover:bg-surface hover:text-ink aria-[current=page]:text-accent"
             >
               {label}
             </a>
           ))}
+          <a
+            href={siteConfig.resumeUrl}
+            download="Adriano_Demartin_Resume.pdf"
+            className="ml-2 rounded-md bg-accent px-3 py-2 text-sm font-medium text-accent-contrast transition-colors hover:bg-accent-hover"
+          >
+            Resume
+          </a>
         </nav>
 
         <div className="flex items-center gap-2">
@@ -124,12 +131,20 @@ export function Nav() {
               <a
                 key={href}
                 href={href}
-                className="rounded-lg px-3 py-3 text-base font-medium text-ink hover:bg-surface"
+                aria-current={isCurrent(href) ? 'page' : undefined}
+                className="rounded-lg px-3 py-3 text-base font-medium text-ink hover:bg-surface aria-[current=page]:text-accent"
                 onClick={() => setOpen(false)}
               >
                 {label}
               </a>
             ))}
+            <a
+              href={siteConfig.resumeUrl}
+              download="Adriano_Demartin_Resume.pdf"
+              className="rounded-lg px-3 py-3 text-base font-medium text-accent hover:bg-surface"
+            >
+              Download resume
+            </a>
           </nav>
         </div>
       )}
