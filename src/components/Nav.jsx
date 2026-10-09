@@ -3,12 +3,16 @@ import { siteConfig } from '../siteConfig'
 import { applyTheme } from '../theme'
 
 const links = [
+  { href: '/', label: 'Home' },
   { href: '/projects/', label: 'Projects' },
   { href: '/experience/', label: 'Experience' },
   { href: '/about/', label: 'About' },
 ]
 
-const isCurrent = (href) => window.location.pathname.startsWith(href)
+const isCurrent = (href) => {
+  const path = window.location.pathname
+  return href === '/' ? path === '/' || path === '/index.html' : path.startsWith(href)
+}
 
 function ThemeToggle() {
   const [dark, setDark] = useState(() => document.documentElement.classList.contains('dark'))

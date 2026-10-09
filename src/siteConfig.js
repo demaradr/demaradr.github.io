@@ -9,7 +9,7 @@ export const siteConfig = {
   githubUrl: 'https://github.com/demaradr',
   linkedinUrl: 'https://www.linkedin.com/in/adriano-demartin',
   /** Plain email; mailto: is applied in components */
-  email: 'hello@adrianodemartin.com',
+  email: 'adriano.demartinez@gmail.com',
   resumeUrl: '/Adriano_Demartin_Resume.pdf',
   headshotUrl: '/headshot.webp',
   /** Shown as a badge in the hero; set to null to hide */
