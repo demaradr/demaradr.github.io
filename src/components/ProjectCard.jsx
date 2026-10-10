@@ -54,11 +54,13 @@ export function ProjectCard({ project, size = 'md' }) {
   return (
     <li className="group relative flex flex-col overflow-hidden rounded-2xl border border-line/5 bg-canvas shadow-sm transition-shadow duration-200 hover:shadow-card">
       {image ? (
-        <div className="overflow-hidden border-b border-line/5">
+        <div className={`overflow-hidden border-b border-line/5 ${image.fit === 'contain' ? 'bg-white' : ''}`}>
           <img
             src={image.src}
             alt={image.alt}
-            className={`${size === 'lg' ? 'aspect-[16/9]' : 'aspect-video'} w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]`}
+            className={`${size === 'lg' ? 'aspect-[16/9]' : 'aspect-video'} w-full ${
+              image.fit === 'contain' ? 'object-contain p-3' : 'object-cover'
+            } transition-transform duration-500 group-hover:scale-[1.03]`}
             loading="lazy"
             decoding="async"
           />

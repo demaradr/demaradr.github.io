@@ -5,6 +5,7 @@
  * - `group`: 'work' projects are listed first on /projects/
  * - `page: false` shows a card only, with no case-study page
  * - Images live in /public/photos; projects without one can set `flow` to draw a pipeline instead
+ * - Set `fit: 'contain'` on an image (diagrams, screenshots) to show it whole instead of cropping it
  */
 export const projects = [
   {
@@ -131,7 +132,7 @@ export const projects = [
     slug: 'jwt-pizza',
     group: 'personal',
     name: 'JWT Pizza',
-    kicker: 'DevOps · Full stack',
+    kicker: 'BYU CS 329 · QA & DevOps',
     year: '2026',
     summary:
       'A pizza-ordering app (React frontend + Node/Express/MySQL service) that I took from a course starter to a monitored, tested, continuously deployed production system on AWS.',
@@ -149,9 +150,19 @@ export const projects = [
         href: 'https://github.com/demaradr/jwt-pizza/blob/main/incidentReport/incident-2026-04-06-1.md',
       },
     ],
-    image: null,
-    flow: ['lint', 'test', 'build', 'deploy', 'monitor'],
-    gallery: [],
+    image: {
+      src: '/photos/jwt-pizza-architecture.webp',
+      alt: 'JWT Pizza architecture: GitHub Actions CI/CD, AWS CDN, compute, and database, Grafana metrics, logging, and load testing, plus chaos and penetration testing',
+      fit: 'contain',
+    },
+    gallery: [
+      {
+        src: '/photos/jwt-pizza-architecture.webp',
+        alt: 'JWT Pizza architecture: GitHub Actions CI/CD, AWS CDN, compute, and database, Grafana metrics, logging, and load testing, plus chaos and penetration testing',
+        fit: 'contain',
+      },
+      { src: '/photos/jwt-pizza-app.webp', alt: 'The JWT Pizza web app home page', fit: 'contain' },
+    ],
     sections: [
       {
         title: 'The goal',
